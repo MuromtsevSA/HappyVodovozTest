@@ -1,0 +1,33 @@
+﻿<Window x:Class="HappyVodovozTest.View.AddOrderWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:HappyVodovozTest.View"
+        mc:Ignorable="d"
+        Title="AddOrderWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+            <TextBlock Text="Введите номер заказа" Margin="10"/>
+            <TextBox Width="200" Height="30" Text="{Binding NumberOrder, Mode=OneWayToSource}"/>
+        </StackPanel>
+        <StackPanel Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center">
+            <TextBlock Text="Введите название товра" Margin="10"/>
+            <TextBox Width="200" Height="30" Text="{Binding ProductName}"/>
+        </StackPanel>
+        <StackPanel Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Center">
+            <TextBlock Text="Выберете сотрудника" Margin="10"/>
+            <ComboBox ItemsSource="{Binding Persons}" DisplayMemberPath="Name" SelectedIndex="{Binding SelectedNamePerson}"/>
+        </StackPanel>
+        <Button Grid.Row="1" Grid.Column="1" Width="200" Height="30" Content="Добавить" Command="{Binding AddOrderCommand}"/>
+    </Grid>
+</Window>

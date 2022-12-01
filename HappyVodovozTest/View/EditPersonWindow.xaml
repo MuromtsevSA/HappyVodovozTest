@@ -1,0 +1,89 @@
+﻿<Window x:Class="HappyVodovozTest.View.EditPersonWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:HappyVodovozTest.View"
+        mc:Ignorable="d"
+        Title="EditPersonWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <StackPanel Grid.Row="0" VerticalAlignment="Center" HorizontalAlignment="Center">
+                <TextBlock Text="Выберите имя сотрудника" Margin="10" />
+                <ComboBox Width="180" Height="30" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            </StackPanel>
+            <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="1">
+                <TextBlock Text="Введите новое имя" Margin="10"/>
+                <TextBox  Width="180" Height="30" VerticalAlignment="Center" HorizontalAlignment="Center" Text="jjj"/>
+            </StackPanel>
+
+        </Grid>
+        <Grid Grid.Column="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+                <TextBlock Text="Выберете фамилию сотрудника" Margin="10"/>
+                <ComboBox  Width="180" Height="30"/>
+            </StackPanel>
+            <StackPanel Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center">
+                <TextBlock Text="Введите новую фамилию" Margin="10" />
+                <TextBox Width="180" Height="30"/>
+            </StackPanel>
+
+        </Grid>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+                <TextBlock Text="Выберете отчество" Margin="10"/>
+                <ComboBox Width="180" Height="30"/>
+            </StackPanel>
+            <StackPanel Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center">
+                <TextBlock Text="Введите новую фамилию" Margin="10"/>
+                <TextBox  Width="180" Height="30"/>
+            </StackPanel>
+        </Grid>
+        <Grid Grid.Column="1" Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="180*"/>
+                <ColumnDefinition Width="103*"/>
+                <ColumnDefinition Width="117*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Height="66" Width="154">
+                <TextBlock Text="Выберет подразделение" Margin="10"/>
+                <ComboBox  Width="130" Height="30"/>
+            </StackPanel>
+            <StackPanel Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" Height="66" Width="150">
+                <TextBlock Text="Введите дату рождения" Margin="10"/>
+                <TextBox  Width="100" Height="30"/>
+            </StackPanel>
+            <StackPanel Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" Height="66" Width="90">
+                <TextBlock Text="Выберет пол" Margin="5" />
+                <ComboBox  Width="50" Height="30"/>
+            </StackPanel>
+
+            <Button Grid.Column="2" Grid.Row="1" Content="Изменить" Margin="15,39,16,39"/>
+        </Grid>
+    </Grid>
+
+</Window>

@@ -1,0 +1,56 @@
+﻿<Window x:Class="HappyVodovozTest.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:HappyVodovozTest.View" 
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Button Width="150" Height="30" Content="Добавить подразделение" Command="{Binding OpenWindowAddDepartmentCommand}" />
+            <Button Grid.Column="1" Width="150" Height="30" Content="Добавить сотрудника" Command="{Binding OpenWindowAddPersonCommand}" />
+            <Button Grid.Column="2" Width="150" Height="30" Content="Добавить заказ"  Command="{Binding OpenWindowAddOrderCommand}"/>
+            <Button Grid.Row="1" Width="180" Height="30" Content="Редактировать подразделение" Command="{Binding OpenWindowEditDepartmentCommand}" />
+            <Button Grid.Row="1" Grid.Column="1" Width="150" Height="30" Content="Редактировать сотрудника" Command="{Binding OpenWindowEditPersonCommand}" />
+            <Button Grid.Row="1" Grid.Column="2" Width="150" Height="30" Content="Редактировать заказ"  Command="{Binding OpenWindowEditOrderCommand}"/>
+        </Grid>
+        <Grid Grid.Row="1"  Grid.Column="1" >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+              
+            </Grid.ColumnDefinitions>
+            <ListView Grid.Column="0"  ItemsSource="{Binding Persons}" >
+                <ListView.View>
+                    <GridView>
+                        <GridView.Columns>
+                            <GridViewColumn Header="Имя"  DisplayMemberBinding="{Binding Name}" Width="100"/>
+                            <GridViewColumn Header="Фамилия" DisplayMemberBinding="{Binding Surname }" Width="100"/>
+                            <GridViewColumn Header="Отчество" DisplayMemberBinding="{Binding Patromynic}" Width="100"/>
+                            <GridViewColumn Header="Дата рождения" DisplayMemberBinding="{Binding DateOfBirth}" Width="100"/>
+                            <GridViewColumn Header="Пол" DisplayMemberBinding="{Binding Gender}" Width="100"/>
+                            <GridViewColumn Width="100" Header="Подразделение" DisplayMemberBinding="{Binding Path=Department[0].Name}"/>
+                            <GridViewColumn Header="Номер заказа" Width="100" DisplayMemberBinding="{Binding Number}"/>
+                            <GridViewColumn Header="Название" Width="100" DisplayMemberBinding="{Binding Path=Order[0].Name}"/>
+                        </GridView.Columns>
+                    </GridView>
+                </ListView.View>
+            </ListView>
+           
+        </Grid>
+        
+    </Grid>
+</Window>
