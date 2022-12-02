@@ -22,11 +22,11 @@
             </Grid.ColumnDefinitions>
             <StackPanel Grid.Row="0" VerticalAlignment="Center" HorizontalAlignment="Center">
                 <TextBlock Text="Выберите имя сотрудника" Margin="10" />
-                <ComboBox Width="180" Height="30" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                <ComboBox Width="180" Height="30" HorizontalAlignment="Center" VerticalAlignment="Center" ItemsSource="{Binding Persons}" DisplayMemberPath="Name"/>
             </StackPanel>
             <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="1">
                 <TextBlock Text="Введите новое имя" Margin="10"/>
-                <TextBox  Width="180" Height="30" VerticalAlignment="Center" HorizontalAlignment="Center" Text="jjj"/>
+                <TextBox  Width="180" Height="30" VerticalAlignment="Center" HorizontalAlignment="Center" Text="{Binding PersonName}"/>
             </StackPanel>
 
         </Grid>
@@ -37,11 +37,11 @@
             </Grid.ColumnDefinitions>
             <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
                 <TextBlock Text="Выберете фамилию сотрудника" Margin="10"/>
-                <ComboBox  Width="180" Height="30"/>
+                <ComboBox  Width="180" Height="30" ItemsSource="{Binding Persons}" DisplayMemberPath="SurName"/>
             </StackPanel>
             <StackPanel Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center">
                 <TextBlock Text="Введите новую фамилию" Margin="10" />
-                <TextBox Width="180" Height="30"/>
+                <TextBox Width="180" Height="30" Text="{Binding PersonSurName}"/>
             </StackPanel>
 
         </Grid>
@@ -52,11 +52,11 @@
             </Grid.ColumnDefinitions>
             <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
                 <TextBlock Text="Выберете отчество" Margin="10"/>
-                <ComboBox Width="180" Height="30"/>
+                <ComboBox Width="180" Height="30" ItemsSource="{Binding Persons}" DisplayMemberPath="Patronimyc"/>
             </StackPanel>
             <StackPanel Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center">
-                <TextBlock Text="Введите новую фамилию" Margin="10"/>
-                <TextBox  Width="180" Height="30"/>
+                <TextBlock Text="Введите новое отчество" Margin="10" />
+                <TextBox  Width="180" Height="30" Text="{Binding PersonPatronymic}"/>
             </StackPanel>
         </Grid>
         <Grid Grid.Column="1" Grid.Row="1">
@@ -71,18 +71,18 @@
             </Grid.RowDefinitions>
             <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Height="66" Width="154">
                 <TextBlock Text="Выберет подразделение" Margin="10"/>
-                <ComboBox  Width="130" Height="30"/>
+                <ComboBox  Width="130" Height="30" ItemsSource="{Binding Departments}" DisplayMemberPath="Name"/>
             </StackPanel>
             <StackPanel Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" Height="66" Width="150">
                 <TextBlock Text="Введите дату рождения" Margin="10"/>
-                <TextBox  Width="100" Height="30"/>
+                <DatePicker Width="100" Height="30"  SelectedDate="{Binding PersonDateBirth}"/>
             </StackPanel>
             <StackPanel Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" Height="66" Width="90">
                 <TextBlock Text="Выберет пол" Margin="5" />
-                <ComboBox  Width="50" Height="30"/>
+                <ComboBox  Width="50" Height="30" ItemsSource="{Binding Persons}" DisplayMemberPath="Gender"/>
             </StackPanel>
 
-            <Button Grid.Column="2" Grid.Row="1" Content="Изменить" Margin="15,39,16,39"/>
+            <Button Grid.Column="2" Grid.Row="1" Content="Изменить" Margin="15,39,16,39" Command="{Binding }"/>
         </Grid>
     </Grid>
 

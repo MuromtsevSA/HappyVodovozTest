@@ -42,7 +42,7 @@ namespace HappyVodovozTest.ViewModel
             {
                 if (_departmentName != string.Empty)
                 {
-                    var department = new Department { Name = _departmentName };
+                    var department = new Department { Name = _departmentName,   };
                     if (department != null)
                     {
                         _db.Departments.Add(department);

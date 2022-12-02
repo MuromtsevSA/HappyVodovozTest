@@ -33,7 +33,7 @@
                 <ColumnDefinition />
               
             </Grid.ColumnDefinitions>
-            <ListView Grid.Column="0"  ItemsSource="{Binding Persons}" >
+            <ListView Grid.Column="0"  ItemsSource="{Binding Persons, Mode=TwoWay,  UpdateSourceTrigger=PropertyChanged}" >
                 <ListView.View>
                     <GridView>
                         <GridView.Columns>
@@ -42,9 +42,9 @@
                             <GridViewColumn Header="Отчество" DisplayMemberBinding="{Binding Patromynic}" Width="100"/>
                             <GridViewColumn Header="Дата рождения" DisplayMemberBinding="{Binding DateOfBirth}" Width="100"/>
                             <GridViewColumn Header="Пол" DisplayMemberBinding="{Binding Gender}" Width="100"/>
-                            <GridViewColumn Width="100" Header="Подразделение" DisplayMemberBinding="{Binding Path=Department[0].Name}"/>
-                            <GridViewColumn Header="Номер заказа" Width="100" DisplayMemberBinding="{Binding Number}"/>
-                            <GridViewColumn Header="Название" Width="100" DisplayMemberBinding="{Binding Path=Order[0].Name}"/>
+                            <GridViewColumn Width="100" Header="Подразделение" DisplayMemberBinding="{Binding Path=Department.Name}"/>
+                            <GridViewColumn Header="Номер заказа" Width="100" DisplayMemberBinding="{Binding Path=Orders[0].Number, Mode=TwoWay}"/>
+                            <GridViewColumn Header="Название" Width="100" DisplayMemberBinding="{Binding Path=Orders[0].Name}"/>
                         </GridView.Columns>
                     </GridView>
                 </ListView.View>
