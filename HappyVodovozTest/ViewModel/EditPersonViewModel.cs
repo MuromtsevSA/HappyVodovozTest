@@ -141,9 +141,9 @@ namespace HappyVodovozTest.ViewModel
                     person.Surname = _personSurname == null ? person.Surname : _personSurname;
                     person.Name = _personName == null ? person.Name : _personName;
                     person.Patromynic = _personPatronymic == null ? person.Patromynic : _personPatronymic;
-                    person.Gender = (Gender)_selectedGender == null ? person.Gender : (Gender)_selectedGender;
-                    person.DateOfBirth = _personDateBirth == null ? person.DateOfBirth : _personDateBirth.ToUniversalTime().AddDays(1);
-                    person.DepartmentId = _selectedDepartment == null ? person.DepartmentId : _selectedDepartment + 1;
+                    person.Gender = (Gender)_selectedGender < 0  ? person.Gender : (Gender)_selectedGender;
+                    person.DateOfBirth = _personDateBirth < 0 ? person.DateOfBirth : _personDateBirth.ToUniversalTime().AddDays(1);
+                    person.DepartmentId = _selectedDepartment < 0 ? person.DepartmentId : _selectedDepartment + 1;
                 }
                 ((Context)_db).SaveChangesAsync();
             }
